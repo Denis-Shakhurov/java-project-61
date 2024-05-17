@@ -16,13 +16,13 @@ public class Even {
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
             String answer = sc.nextLine();
-            if ((randomNumber % 2 == 0 && answer.equals("yes")) ||
-                    (randomNumber % 2 != 0 && answer.equals("no"))) {
+            if ((randomNumber % 2 == 0 && answer.equals("yes"))
+                    || (randomNumber % 2 != 0 && answer.equals("no"))) {
                 System.out.println("Correct!");
                 count++;
             } else if (!(answer.equals("yes")) || !(answer.equals("no"))) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
-                        "Let's try again, " + name);
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
+                        + "Let's try again, " + name);
                 break;
             }
             if (count == 3) {
