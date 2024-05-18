@@ -3,8 +3,14 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Denis-Shakhurov/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Denis-Shakhurov/java-project-61/actions)
 
-### Game 2 win
+### Game Even win
 https://ru.paste.pics/f0c119138228ea349478a9b3fc730c26
 
-### Game 2 lose
+### Game Even lose
 https://ru.paste.pics/34105e875fe5a18950e118c2b84b3ba1
+
+### Game Calc win
+https://ru.paste.pics/52894f8956ca63378653838306fbef45
+
+### Game Calc lose
+https://ru.paste.pics/4d94b9f9df1d832f3a21d3ff56b00e9e
