@@ -26,3 +26,9 @@ https://ru.paste.pics/e1905d2075cf1eb79f8458ca4c16606e
 
 ### Game Progression lose
 https://ru.paste.pics/729c28c982de40c6535bef15b8f6997a
+
+### Game Prime win
+https://ru.paste.pics/2cc9d346162adb54aa9531a658ece899
+
+### Game Prime lose
+https://ru.paste.pics/169297d3319e3d780c1dca69e08e1a2e
