@@ -14,7 +14,7 @@ public class Calc {
                 case 0: engine.questionAndAnswer("*", number1, number2);
                     int resultWork = number1 * number2;
                     if (engine.getAnswer().matches("[a-zA-Z]")
-                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer().equals("")) {
                         engine.printGameLose(resultWork);
                         return;
                     } else if (Integer.parseInt(engine.getAnswer()) == resultWork) {
@@ -25,7 +25,7 @@ public class Calc {
                 case 1: engine.questionAndAnswer("+", number1, number2);
                     int resultSum = number1 + number2;
                     if (engine.getAnswer().matches("[a-zA-Z]")
-                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer().equals("")) {
                         engine.printGameLose(resultSum);
                         return;
                     } else if (Integer.parseInt(engine.getAnswer()) == resultSum) {
@@ -36,7 +36,7 @@ public class Calc {
                 case 2: engine.questionAndAnswer("-", number1, number2);
                     int resultSub = number1 - number2;
                     if (engine.getAnswer().matches("[a-zA-Z]")
-                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer().equals("")) {
                         engine.printGameLose(resultSub);
                         return;
                     } else if (Integer.parseInt(engine.getAnswer()) == resultSub) {
