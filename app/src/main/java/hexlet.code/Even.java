@@ -19,7 +19,7 @@ public class Even {
             } else if (engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
                 engine.printGameLose("yes");
                 break;
-            } else if (engine.getAnswer() == null || engine.getAnswer().matches("\s+")
+            } else if (engine.getAnswer().equals("") || engine.getAnswer().matches("\s+")
                     || engine.getAnswer().matches("[-+]?\\d+")) {
                 engine.printGameLose("");
                 break;
