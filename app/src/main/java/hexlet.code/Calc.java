@@ -12,32 +12,32 @@ public class Calc {
             int index = (int) (Math.random() * 3);
             switch (index) {
                 case 0: engine.questionAndAnswer("*", number1, number2);
-                    if (Integer.parseInt(engine.getAnswer()) == number1 * number2) {
+                    int resultWork = number1 * number2;
+                    if (Integer.parseInt(engine.getAnswer()) == resultWork) {
                         System.out.println("Correct!");
                         count++;
                     } else {
-                        System.out.println("'" + engine.getAnswer() + "' is wrong answer ;(. Correct answer was '"
-                            + (number2 * number1) + "'.\n" + "Let's try again, " + engine.getName());
+                        engine.printGameLose(resultWork);
                         return;
                     }
                     break;
                 case 1: engine.questionAndAnswer("+", number1, number2);
-                    if (Integer.parseInt(engine.getAnswer()) == number1 + number2) {
+                    int resultSum = number1 + number2;
+                    if (Integer.parseInt(engine.getAnswer()) == resultSum) {
                         System.out.println("Correct!");
                         count++;
                     } else {
-                        System.out.println("'" + engine.getAnswer() + "' is wrong answer ;(. Correct answer was '"
-                            + (number2 + number1) + "'.\n" + "Let's try again, " + engine.getName());
+                        engine.printGameLose(resultSum);
                         return;
                     }
                     break;
                 case 2: engine.questionAndAnswer("-", number1, number2);
-                    if (Integer.parseInt(engine.getAnswer()) == number1 - number2) {
+                    int resultSub = number1 - number2;
+                    if (Integer.parseInt(engine.getAnswer()) == resultSub) {
                         System.out.println("Correct!");
                         count++;
                     } else {
-                        System.out.println("'" + engine.getAnswer() + "' is wrong answer ;(. Correct answer was '"
-                            + (number2 - number1) + "'.\n" + "Let's try again, " + engine.getName());
+                        engine.printGameLose(resultSub);
                         return;
                     }
                     break;
@@ -45,7 +45,7 @@ public class Calc {
                     System.out.println("Incorrect index");
             }
             if (count == 3) {
-                System.out.println("Congratulations, " + engine.getName());
+                engine.printGameWin();
             }
         }
     }
