@@ -14,15 +14,14 @@ public class Even {
                 System.out.println("Correct!");
                 count++;
             } else if (engine.getAnswer().equals("yes") && randomNumber % 2 != 0) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
-                        + "Let's try again, " + engine.getName());
+                engine.printGameLose("no");
                 break;
             } else if (engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
-                        + "Let's try again, " + engine.getName());
+                engine.printGameLose("yes");
+                break;
             }
             if (count == 3) {
-                System.out.println("Congratulations, " + engine.getName());
+                engine.printGameWin();
             }
         }
     }
