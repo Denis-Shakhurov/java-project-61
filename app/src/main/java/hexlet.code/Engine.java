@@ -19,6 +19,11 @@ public class Engine {
         System.out.print("Your answer: ");
         answer = sc.nextLine();
     }
+    public void questionAndAnswer(String text) {
+        System.out.println("Question: " + text);
+        System.out.print("Your answer: ");
+        answer = sc.nextLine();
+    }
     public void questionAndAnswer(int number1, int number2) {
         System.out.println("Question: " + number1 + " " + number2);
         System.out.print("Your answer: ");
