@@ -32,7 +32,7 @@ public class Progression {
         int count = 0;
         while (count < 3) {
             int[] array = arrayInt();
-            int index = (int) (Math.random() * array.length);
+            int index = (int) (1 + Math.random() * (array.length - 1));
             int result = array[index];
             String printArray = arrayWithEllipsis(index, array);
             engine.questionAndAnswer(printArray);
