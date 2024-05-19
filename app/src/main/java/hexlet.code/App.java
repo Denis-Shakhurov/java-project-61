@@ -10,6 +10,7 @@ public class App {
                 + "1 - Greet\n"
                 + "2 - Even\n"
                 + "3 - Calc\n"
+                + "4 - GCD\n"
                 + "0 - Exit\n"
                 + "Your choice: ");
         int numberGame = sc.nextInt();
@@ -17,6 +18,7 @@ public class App {
             case 1 : engine.greeting(); break;
             case 2 : Even.gameEven(); break;
             case 3 : Calc.gameCalc(); break;
+            case 4 : GCD.gameGsd(); break;
             default :
                 System.out.println("Enter number of list");
         }
