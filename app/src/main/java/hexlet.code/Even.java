@@ -19,6 +19,10 @@ public class Even {
             } else if (engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
                 engine.printGameLose("yes");
                 break;
+            } else if (engine.getAnswer() == null || engine.getAnswer().matches("\s+")
+                    || engine.getAnswer().matches("[-+]?\\d+")) {
+                engine.printGameLose("");
+                break;
             }
             if (count == 3) {
                 engine.printGameWin();
