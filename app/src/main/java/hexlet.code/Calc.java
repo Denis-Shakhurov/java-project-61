@@ -13,32 +13,35 @@ public class Calc {
             switch (index) {
                 case 0: engine.questionAndAnswer("*", number1, number2);
                     int resultWork = number1 * number2;
-                    if (Integer.parseInt(engine.getAnswer()) == resultWork) {
-                        System.out.println("Correct!");
-                        count++;
-                    } else {
+                    if (engine.getAnswer().matches("[a-zA-Z]")
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
                         engine.printGameLose(resultWork);
                         return;
+                    } else if (Integer.parseInt(engine.getAnswer()) == resultWork) {
+                            System.out.println("Correct!");
+                            count++;
                     }
                     break;
                 case 1: engine.questionAndAnswer("+", number1, number2);
                     int resultSum = number1 + number2;
-                    if (Integer.parseInt(engine.getAnswer()) == resultSum) {
-                        System.out.println("Correct!");
-                        count++;
-                    } else {
+                    if (engine.getAnswer().matches("[a-zA-Z]")
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
                         engine.printGameLose(resultSum);
                         return;
+                    } else if (Integer.parseInt(engine.getAnswer()) == resultSum) {
+                        System.out.println("Correct!");
+                        count++;
                     }
                     break;
                 case 2: engine.questionAndAnswer("-", number1, number2);
                     int resultSub = number1 - number2;
-                    if (Integer.parseInt(engine.getAnswer()) == resultSub) {
-                        System.out.println("Correct!");
-                        count++;
-                    } else {
+                    if (engine.getAnswer().matches("[a-zA-Z]")
+                            || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
                         engine.printGameLose(resultSub);
                         return;
+                    } else if (Integer.parseInt(engine.getAnswer()) == resultSub) {
+                        System.out.println("Correct!");
+                        count++;
                     }
                     break;
                 default :
