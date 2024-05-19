@@ -15,12 +15,13 @@ public class GCD {
             int number2 = (int) (Math.random() * (100 + 1)) + 1;
             int result = gcd(number1, number2);
             engine.questionAndAnswer(number1, number2);
-            if (Integer.parseInt(engine.getAnswer()) == result) {
-                System.out.println("Correct!");
-                count++;
-            } else {
+            if (engine.getAnswer().matches("[a-zA-Z]")
+                    || engine.getAnswer().matches("\s+") || engine.getAnswer() == null) {
                 engine.printGameLose(result);
                 break;
+            } else if (Integer.parseInt(engine.getAnswer()) == result) {
+                System.out.println("Correct!");
+                count++;
             }
             if (count == 3) {
                 engine.printGameWin();
