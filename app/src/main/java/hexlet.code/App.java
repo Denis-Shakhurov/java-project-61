@@ -23,6 +23,7 @@ public class App {
             case 4 : GCD.gameGsd(); break;
             case 5 : Progression.gameProgression(); break;
             case 6 : Prime.gamePrime(); break;
+            case 0 : return;
             default :
                 System.out.println("Enter number of list");
         }
