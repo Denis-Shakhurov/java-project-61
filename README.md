@@ -14,3 +14,9 @@ https://ru.paste.pics/52894f8956ca63378653838306fbef45
 
 ### Game Calc lose
 https://ru.paste.pics/4d94b9f9df1d832f3a21d3ff56b00e9e
+
+### Game GCD win
+https://ru.paste.pics/6a79e8397a15d14e05e2cba85822a3fa
+
+### Game GCD lose
+https://ru.paste.pics/5d93a657dfe6bbbda7848c52a4e0d4dd
