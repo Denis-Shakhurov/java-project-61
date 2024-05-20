@@ -22,8 +22,8 @@ public class Calc {
                         engine.printGameLose(resultWork);
                         return;
                     } else if (Integer.parseInt(engine.getAnswer()) == resultWork) {
-                            System.out.println("Correct!");
-                            count++;
+                        System.out.println("Correct!");
+                        count++;
                     }
                     break;
                 case 1: engine.questionAndAnswer("+", number1, number2);
