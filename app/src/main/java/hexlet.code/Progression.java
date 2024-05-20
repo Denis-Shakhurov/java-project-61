@@ -40,6 +40,9 @@ public class Progression {
                     || engine.getAnswer().matches("\s+") || engine.getAnswer().equals("")) {
                 engine.printGameLose(result);
                 break;
+            } else if (Integer.parseInt(engine.getAnswer()) != result) {
+                engine.printGameLose(result);
+                break;
             } else if (Integer.parseInt(engine.getAnswer()) == result) {
                 System.out.println("Correct!");
                 count++;
