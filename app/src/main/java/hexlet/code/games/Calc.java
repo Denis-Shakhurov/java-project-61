@@ -41,7 +41,7 @@ public class Calc {
                     break;
                 case 2: engine.questionAndAnswer("-", number1, number2);
                     int resultSub = number1 - number2;
-                    if (engine.getAnswer().matches("[a-zA-Z]")
+                    if (engine.getAnswer().matches("^[\\p{L}\\d ?!,.']+$")
                             || engine.getAnswer().matches("\\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultSub) {

@@ -38,7 +38,7 @@ public class Progression {
             int result = array[index];
             String printArray = arrayWithEllipsis(index, array);
             engine.questionAndAnswer(printArray);
-            if (!engine.getAnswer().matches("\\d+")
+            if (engine.getAnswer().matches("^[\\p{L}\\d ?!,.']+$")
                     || engine.getAnswer().matches("\s+")
                     || engine.getAnswer().equals("")) {
                 engine.printGameLose(result);
