@@ -29,7 +29,8 @@ public class Prime {
             } else if ((checkNumber(number)) && engine.getAnswer().equals("no")) {
                 engine.printGameLose("yes");
                 break;
-            } else if (engine.getAnswer().equals("") || engine.getAnswer().matches("\s+")
+            } else if (engine.getAnswer().equals("")
+                    || engine.getAnswer().matches("\s+")
                     || engine.getAnswer().matches("[-+]?\\d+")) {
                 engine.printGameLose("");
                 break;
