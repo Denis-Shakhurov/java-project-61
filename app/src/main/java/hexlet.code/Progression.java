@@ -2,12 +2,12 @@ package hexlet.code;
 
 public class Progression {
     public static int[] arrayInt() {
-        int length = (int) (5 + Math.random() * 5);
+        //int length = (int) (5 + Math.random() * 5);
         int start = (int) (Math.random() * 100);
         int index = (int) (1 + Math.random() * 5);
-        int[] array = new int[length];
+        int[] array = new int[10];
         array[0] = start;
-        for (int i = 1; i < length; i++) {
+        for (int i = 1; i < array.length; i++) {
             array[i] = array[i - 1] + index;
         }
         return array;
