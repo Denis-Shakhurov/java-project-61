@@ -13,7 +13,7 @@ public class Calc {
             switch (index) {
                 case 0: engine.questionAndAnswer("*", number1, number2);
                     int resultWork = number1 * number2;
-                    if (engine.getAnswer().matches("[a-zA-Z]")
+                    if (!engine.getAnswer().matches("\\d+")
                             || engine.getAnswer().matches("\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultWork) {
@@ -26,7 +26,7 @@ public class Calc {
                     break;
                 case 1: engine.questionAndAnswer("+", number1, number2);
                     int resultSum = number1 + number2;
-                    if (engine.getAnswer().matches("[a-zA-Z]")
+                    if (!engine.getAnswer().matches("\\d+")
                             || engine.getAnswer().matches("\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultSum) {
@@ -39,7 +39,7 @@ public class Calc {
                     break;
                 case 2: engine.questionAndAnswer("-", number1, number2);
                     int resultSub = number1 - number2;
-                    if (engine.getAnswer().matches("[a-zA-Z]")
+                    if (!engine.getAnswer().matches("\\d+")
                             || engine.getAnswer().matches("\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultSub) {
