@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Prime {
     public static boolean checkNumber(int number) {
@@ -29,9 +31,7 @@ public class Prime {
             } else if ((checkNumber(number)) && engine.getAnswer().equals("no")) {
                 engine.printGameLose("yes");
                 break;
-            } else if (engine.getAnswer().equals("")
-                    || engine.getAnswer().matches("\s+")
-                    || engine.getAnswer().matches("[-+]?\\d+")) {
+            } else {
                 engine.printGameLose("");
                 break;
             }

@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Calc {
     public static void gameCalc() {
@@ -14,7 +16,7 @@ public class Calc {
                 case 0: engine.questionAndAnswer("*", number1, number2);
                     int resultWork = number1 * number2;
                     if (!engine.getAnswer().matches("\\d+")
-                            || engine.getAnswer().matches("\s+")
+                            || engine.getAnswer().matches("\\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultWork) {
                         engine.printGameLose(resultWork);
@@ -27,7 +29,7 @@ public class Calc {
                 case 1: engine.questionAndAnswer("+", number1, number2);
                     int resultSum = number1 + number2;
                     if (!engine.getAnswer().matches("\\d+")
-                            || engine.getAnswer().matches("\s+")
+                            || engine.getAnswer().matches("\\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultSum) {
                         engine.printGameLose(resultSum);
@@ -40,7 +42,7 @@ public class Calc {
                 case 2: engine.questionAndAnswer("-", number1, number2);
                     int resultSub = number1 - number2;
                     if (!engine.getAnswer().matches("\\d+")
-                            || engine.getAnswer().matches("\s+")
+                            || engine.getAnswer().matches("\\s+")
                             || engine.getAnswer().equals("")
                             || Integer.parseInt(engine.getAnswer()) != resultSub) {
                         engine.printGameLose(resultSub);

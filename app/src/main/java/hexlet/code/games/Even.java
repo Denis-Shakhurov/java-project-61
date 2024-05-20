@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Even {
     public static void gameEven() {
@@ -19,8 +21,7 @@ public class Even {
             } else if (engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
                 engine.printGameLose("yes");
                 break;
-            } else if (engine.getAnswer().equals("") || engine.getAnswer().matches("\s+")
-                    || engine.getAnswer().matches("[-+]?\\d+")) {
+            } else {
                 engine.printGameLose("");
                 break;
             }
