@@ -3,30 +3,31 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
+    private static final int NUMBER_OF_GAMES = 3;
+    private static final int INDEX = 200;
     public static void gameEven() {
-        Engine engine = new Engine();
-        engine.greeting();
+        Engine.greeting();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int count = 0;
-        while (count < 3) {
-            int randomNumber = (int) (Math.random() * (200 + 1)) + 1;
-            engine.questionAndAnswer(randomNumber);
-            if ((randomNumber % 2 == 0 && engine.getAnswer().equals("yes"))
-                    || (randomNumber % 2 != 0 && engine.getAnswer().equals("no"))) {
+        while (count < NUMBER_OF_GAMES) {
+            int randomNumber = (int) (1 + Math.random() * INDEX);
+            Engine.questionAndAnswer(randomNumber);
+            if ((randomNumber % 2 == 0 && Engine.getAnswer().equals("yes"))
+                    || (randomNumber % 2 != 0 && Engine.getAnswer().equals("no"))) {
                 System.out.println("Correct!");
                 count++;
-            } else if (engine.getAnswer().equals("yes") && randomNumber % 2 != 0) {
-                engine.printGameLose("no");
+            } else if (Engine.getAnswer().equals("yes") && randomNumber % 2 != 0) {
+                Engine.printGameLose("no");
                 break;
-            } else if (engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
-                engine.printGameLose("yes");
+            } else if (Engine.getAnswer().equals("no") && randomNumber % 2 == 0) {
+                Engine.printGameLose("yes");
                 break;
             } else {
-                engine.printGameLose("");
+                Engine.printGameLose("");
                 break;
             }
-            if (count == 3) {
-                engine.printGameWin();
+            if (count == NUMBER_OF_GAMES) {
+                Engine.printGameWin();
             }
         }
     }

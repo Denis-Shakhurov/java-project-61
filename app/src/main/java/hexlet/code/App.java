@@ -8,7 +8,12 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    public static Engine engine = new Engine();
+    private static final int GAME_NUMBER_1 = 1;
+    private static final int GAME_NUMBER_2 = 2;
+    private static final int GAME_NUMBER_3 = 3;
+    private static final int GAME_NUMBER_4 = 4;
+    private static final int GAME_NUMBER_5 = 5;
+    private static final int GAME_NUMBER_6 = 6;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter the game number and press Enter.\n"
@@ -22,12 +27,12 @@ public class App {
                 + "Your choice: ");
         int numberGame = sc.nextInt();
         switch (numberGame) {
-            case 1 : engine.greeting(); break;
-            case 2 : Even.gameEven(); break;
-            case 3 : Calc.gameCalc(); break;
-            case 4 : GCD.gameGsd(); break;
-            case 5 : Progression.gameProgression(); break;
-            case 6 : Prime.gamePrime(); break;
+            case GAME_NUMBER_1 : Engine.greeting(); break;
+            case GAME_NUMBER_2 : Even.gameEven(); break;
+            case GAME_NUMBER_3 : Calc.gameCalc(); break;
+            case GAME_NUMBER_4 : GCD.gameGsd(); break;
+            case GAME_NUMBER_5 : Progression.gameProgression(); break;
+            case GAME_NUMBER_6 : Prime.gamePrime(); break;
             case 0 : return;
             default :
                 System.out.println("Enter number of list");
