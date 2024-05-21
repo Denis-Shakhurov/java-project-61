@@ -18,8 +18,9 @@ public class GCD {
             int result = gcd(number1, number2);
             engine.questionAndAnswer(number1, number2);
             if (engine.getAnswer().matches("^[\\p{L} ?!,.']+$")
-                    || engine.getAnswer().matches("\s+")
-                    || engine.getAnswer().equals("")) {
+                    || engine.getAnswer().matches("\\s+")
+                    || engine.getAnswer().equals("")
+                    || Integer.parseInt(engine.getAnswer()) != result) {
                 engine.printGameLose(result);
                 break;
             } else if (Integer.parseInt(engine.getAnswer()) == result) {
