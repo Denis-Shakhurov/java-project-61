@@ -18,7 +18,7 @@ public class Progression {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < array.length; i++) {
             if (i == index) {
-                sb.append("...");
+                sb.append("..");
                 sb.append(" ");
             } else {
                 sb.append(array[i]);
