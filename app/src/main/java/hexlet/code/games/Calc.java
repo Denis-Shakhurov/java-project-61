@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Calc {
     private static final int NUMBER_OF_GAMES = 3;
     private static final int INDEX_NUMBER = 10;
-    private static final int INDEX= 3;
+    private static final int INDEX = 3;
     public static void gameCalc() {
 
         Engine.greeting();
