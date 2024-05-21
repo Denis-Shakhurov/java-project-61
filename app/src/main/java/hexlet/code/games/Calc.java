@@ -4,16 +4,17 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final int NUMBER_OF_GAMES = 3;
-    private static final int INDEX = 10;
+    private static final int INDEX_NUMBER = 10;
+    private static final int INDEX= 3;
     public static void gameCalc() {
 
         Engine.greeting();
         System.out.println("What is the result of the expression?");
         int count = 0;
         while (count < NUMBER_OF_GAMES) {
-            int number1 = (int) ((Math.random() * INDEX + 1) + 1);
-            int number2 = (int) ((Math.random() * INDEX + 1) + 1);
-            int index = (int) (Math.random() * 3);
+            int number1 = (int) ((Math.random() * INDEX_NUMBER + 1) + 1);
+            int number2 = (int) ((Math.random() * INDEX_NUMBER + 1) + 1);
+            int index = (int) (Math.random() * INDEX);
             switch (index) {
                 case 0: Engine.questionAndAnswer("*", number1, number2);
                     int resultWork = number1 * number2;

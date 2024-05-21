@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 public class Prime {
     private static final int NUMBER_OF_GAMES = 3;
     private static final int INDEX = 100;
+    private static final int INDEX_1 = 3;
     public static boolean checkNumber(int number) {
         boolean check = true;
         for (int i = 2; i < number; i++) {
@@ -20,7 +21,7 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int count = 0;
         while (count < NUMBER_OF_GAMES) {
-            int number = (int) (3 + Math.random() * INDEX);
+            int number = (int) (INDEX_1 + Math.random() * INDEX);
             Engine.questionAndAnswer(number);
             if ((checkNumber(number) && Engine.getAnswer().equals("yes"))
                 || (!(checkNumber(number)) && Engine.getAnswer().equals("no"))) {
