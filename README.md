@@ -4,7 +4,7 @@
 [![Actions Status](https://github.com/Denis-Shakhurov/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Denis-Shakhurov/java-project-61/actions)
 
 ### Game Even win
-[![asciicast]({https://ru.paste.pics/f0c119138228ea349478a9b3fc730c26}.svg)]({https://ru.paste.pics/f0c119138228ea349478a9b3fc730c26}) 
+[![asciicast]]({https://ru.paste.pics/f0c119138228ea349478a9b3fc730c26}) 
 
 ### Game Even lose
 [![asciicast]({https://ru.paste.pics/34105e875fe5a18950e118c2b84b3ba1}.svg)]({https://ru.paste.pics/34105e875fe5a18950e118c2b84b3ba1})
