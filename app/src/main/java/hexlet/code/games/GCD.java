@@ -1,10 +1,10 @@
 package hexlet.code.games;
 
 
+import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class GCD {
-    private static final int NUMBER_OF_GAMES = 3;
     private static final int INDEX = 100;
     public static int gcd(int a, int b) {
         return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
@@ -13,22 +13,18 @@ public class GCD {
         Engine.greeting();
         System.out.println("Find the greatest common divisor of given numbers.");
         int count = 0;
-        while (count < NUMBER_OF_GAMES) {
+        while (count < App.ROUND_OF_GAME) {
             int number1 = (int) (Math.random() * (INDEX + 1)) + 1;
             int number2 = (int) (Math.random() * (INDEX + 1)) + 1;
-            int result = gcd(number1, number2);
             Engine.questionAndAnswer(number1, number2);
-            if (Engine.getAnswer().matches("^[\\p{L} ?!,.']+$")
-                    || Engine.getAnswer().matches("\\s+")
-                    || Engine.getAnswer().equals("")
-                    || Integer.parseInt(Engine.getAnswer()) != result) {
-                Engine.printGameLose(result);
-                break;
-            } else if (Integer.parseInt(Engine.getAnswer()) == result) {
-                System.out.println("Correct!");
+            String answer = Engine.getAnswer();
+            if (Engine.engineGcd(number1, number2, answer)) {
                 count++;
+            } else {
+                break;
             }
-            if (count == NUMBER_OF_GAMES) {
+
+            if (count == App.ROUND_OF_GAME) {
                 Engine.printGameWin();
             }
         }

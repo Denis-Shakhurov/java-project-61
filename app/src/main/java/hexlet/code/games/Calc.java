@@ -1,64 +1,26 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class Calc {
-    private static final int NUMBER_OF_GAMES = 3;
     private static final int INDEX_NUMBER = 10;
-    private static final int INDEX = 3;
+    private static final int INDEX_MATH_OPERATION = 3;
     public static void gameCalc() {
 
         Engine.greeting();
         System.out.println("What is the result of the expression?");
         int count = 0;
-        while (count < NUMBER_OF_GAMES) {
-            int number1 = (int) ((Math.random() * INDEX_NUMBER + 1) + 1);
-            int number2 = (int) ((Math.random() * INDEX_NUMBER + 1) + 1);
-            int index = (int) (Math.random() * INDEX);
-            switch (index) {
-                case 0: Engine.questionAndAnswer("*", number1, number2);
-                    int resultWork = number1 * number2;
-                    if (!Engine.getAnswer().matches("\\d+")
-                            || Engine.getAnswer().matches("\\s+")
-                            || Engine.getAnswer().equals("")
-                            || Integer.parseInt(Engine.getAnswer()) != resultWork) {
-                        Engine.printGameLose(resultWork);
-                        return;
-                    } else if (Integer.parseInt(Engine.getAnswer()) == resultWork) {
-                        System.out.println("Correct!");
-                        count++;
-                    }
-                    break;
-                case 1: Engine.questionAndAnswer("+", number1, number2);
-                    int resultSum = number1 + number2;
-                    if (!Engine.getAnswer().matches("\\d+")
-                            || Engine.getAnswer().matches("\\s+")
-                            || Engine.getAnswer().equals("")
-                            || Integer.parseInt(Engine.getAnswer()) != resultSum) {
-                        Engine.printGameLose(resultSum);
-                        return;
-                    } else if (Integer.parseInt(Engine.getAnswer()) == resultSum) {
-                        System.out.println("Correct!");
-                        count++;
-                    }
-                    break;
-                case 2: Engine.questionAndAnswer("-", number1, number2);
-                    int resultSub = number1 - number2;
-                    if (Engine.getAnswer().matches("^[\\p{L} ?!,.']+$")
-                            || Engine.getAnswer().matches("\\s+")
-                            || Engine.getAnswer().equals("")
-                            || Integer.parseInt(Engine.getAnswer()) != resultSub) {
-                        Engine.printGameLose(resultSub);
-                        return;
-                    } else if (Integer.parseInt(Engine.getAnswer()) == resultSub) {
-                        System.out.println("Correct!");
-                        count++;
-                    }
-                    break;
-                default :
-                    System.out.println("Incorrect index");
+        while (count < App.ROUND_OF_GAME) {
+            int number1 = (int) (Math.random() * INDEX_NUMBER);
+            int number2 = (int) (Math.random() * INDEX_NUMBER);
+            int index = (int) (Math.random() * INDEX_MATH_OPERATION);
+            if (Engine.engineCalc(number1, number2, index)) {
+                count++;
+            } else {
+                break;
             }
-            if (count == NUMBER_OF_GAMES) {
+            if (count == App.ROUND_OF_GAME) {
                 Engine.printGameWin();
             }
         }
