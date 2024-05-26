@@ -8,7 +8,6 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    public static final int ROUND_OF_GAME = 3;
     private static final int GAME_NUMBER_1 = 1;
     private static final int GAME_NUMBER_2 = 2;
     private static final int GAME_NUMBER_3 = 3;
