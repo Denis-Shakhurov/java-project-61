@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Calc {
     private static final int NUMBER_OF_ROUNDS = 3;
+    private static final int MAX_INT = 10;
 
     public static void gameCalc() {
         Engine.engineGame(getQuestionsAndAnswers(), "Calc");
@@ -17,8 +18,8 @@ public class Calc {
     public static List<Map<String, String>> getQuestionsAndAnswers() {
         List<Map<String, String>> list = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int number1 = Utils.getRandomInt(0, 10);
-            int number2 = Utils.getRandomInt(0, 10);
+            int number1 = Utils.getRandomInt(0, MAX_INT);
+            int number2 = Utils.getRandomInt(0, MAX_INT);
             int index = Utils.getRandomInt(0, 2);
             if (index == 0) {
                 int resultWork = number1 * number2;
