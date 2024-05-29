@@ -10,14 +10,16 @@ import java.util.Map;
 public class Progression {
     private static final int NUMBER_OF_ROUNDS = 3;
     private static final int LENGTH = 10;
+    private static final int MAX_INT = 100;
+    private static final int MAX_INDEX = 5;
 
     public static void gameProgression() {
         Engine.engineGame(getQuestionsAndAnswers(), "Progression");
     }
 
     public static String[] progression() {
-        int start = Utils.getRandomInt(0, 100);
-        int index = Utils.getRandomInt(1, 5);
+        int start = Utils.getRandomInt(0, MAX_INT);
+        int index = Utils.getRandomInt(1, MAX_INDEX);
         String[] array = new String[LENGTH];
         array[0] = String.valueOf(start);
         for (int i = 1; i < array.length; i++) {
