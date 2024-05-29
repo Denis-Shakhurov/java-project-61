@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Even {
     private static final int NUMBER_OF_ROUNDS = 3;
+    private static final int MAX_INT = 200;
 
     public static void gameEven() {
         Engine.engineGame(getQuestionsAndAnswers(), "Even");
@@ -17,7 +18,7 @@ public class Even {
     public static List<Map<String, String>> getQuestionsAndAnswers() {
         List<Map<String, String>> list = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int number = Utils.getRandomInt(1, 200);
+            int number = Utils.getRandomInt(1, MAX_INT);
             if (isEven(number)) {
                 list.add(Map.of(String.valueOf(number), "yes"));
             } else {
