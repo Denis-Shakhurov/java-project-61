@@ -1,13 +1,15 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.HashMap;
+import hexlet.code.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Prime {
-    private static final int NUMBER_OF_GAMES = 3;
-    private static final int INDEX = 100;
-    private static final int INDEX_1 = 3;
+    private static final int NUMBER_OF_ROUNDS = 3;
+
     public static boolean checkNumber(int number) {
         boolean check = true;
         for (int i = 2; i < number; i++) {
@@ -18,21 +20,21 @@ public class Prime {
         }
         return check;
     }
+
     public static void gamePrime() {
-        Engine.greeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        Engine.engineGame(getQuestionsAndAnswers());
+        Engine.engineGame(getQuestionsAndAnswers(), "Prime");
     }
-    public static Map<String, String> getQuestionsAndAnswers() {
-        Map<String, String> maps = new HashMap<>();
-        for (int i = 0; i < NUMBER_OF_GAMES; i++) {
-            int number = (int) (INDEX_1 + Math.random() * INDEX);
+
+    public static List<Map<String, String>> getQuestionsAndAnswers() {
+        List<Map<String, String>> list = new ArrayList<>();
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            int number = Utils.getRandomInt(3, 100);
             if (checkNumber(number)) {
-                maps.put(String.valueOf(number), "yes");
+                list.add(Map.of(String.valueOf(number), "yes"));
             } else {
-                maps.put(String.valueOf(number), "no");
+                list.add(Map.of(String.valueOf(number), "no"));
             }
         }
-        return maps;
+        return list;
     }
 }
