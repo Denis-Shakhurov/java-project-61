@@ -36,7 +36,7 @@ public class Progression {
         List<Map<String, String>> list = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             String[] array = progression();
-            int index = Utils.getRandomInt(1, LENGTH - 1);
+            int index = Utils.getRandomInt(0, LENGTH - 1);
             String result = array[index];
             String question = arrayWithEllipsis(index, array);
             String answer = result;
