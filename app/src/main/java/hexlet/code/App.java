@@ -27,7 +27,7 @@ public class App {
                 + "Your choice: ");
         int numberGame = sc.nextInt();
         switch (numberGame) {
-            case GAME_NUMBER_1 : Engine.greeting(); break;
+            case GAME_NUMBER_1 : Cli.greeting(); break;
             case GAME_NUMBER_2 : Even.gameEven(); break;
             case GAME_NUMBER_3 : Calc.gameCalc(); break;
             case GAME_NUMBER_4 : GCD.gameGsd(); break;
