@@ -1,30 +1,32 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.HashMap;
+import hexlet.code.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Even {
-    private static final int NUMBER_OF_GAMES = 3;
-    private static final int INDEX = 200;
+    private static final int NUMBER_OF_ROUNDS = 3;
 
     public static void gameEven() {
-        Engine.greeting();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Engine.engineGame(getQuestionsAndAnswers());
+        Engine.engineGame(getQuestionsAndAnswers(), "Even");
     }
-    public static Map<String, String> getQuestionsAndAnswers() {
-        Map<String, String> maps = new HashMap<>();
-        for (int i = 0; i < NUMBER_OF_GAMES; i++) {
-            int number = (int) (1 + Math.random() * INDEX);
+
+    public static List<Map<String, String>> getQuestionsAndAnswers() {
+        List<Map<String, String>> list = new ArrayList<>();
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            int number = Utils.getRandomInt(1, 200);
             if (isEven(number)) {
-                maps.put(String.valueOf(number), "yes");
+                list.add(Map.of(String.valueOf(number), "yes"));
             } else {
-                maps.put(String.valueOf(number), "no");
+                list.add(Map.of(String.valueOf(number), "no"));
             }
         }
-        return maps;
+        return list;
     }
+
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
