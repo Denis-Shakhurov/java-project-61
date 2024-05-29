@@ -15,7 +15,7 @@ public class GCD {
     }
 
     public static void gameGsd() {
-        Engine.engineGame(getQuestionsAndAnswers(), "GSD");
+        Engine.engineGame(getQuestionsAndAnswers(), "GCD");
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
