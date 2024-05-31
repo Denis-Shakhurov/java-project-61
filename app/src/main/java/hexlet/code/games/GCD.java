@@ -16,7 +16,8 @@ public class GCD {
     }
 
     public static void gameGsd() {
-        Engine.engineGame(getQuestionsAndAnswers(), "GCD");
+        String ruleGcd = "Find the greatest common divisor of given numbers.";
+        Engine.engineGame(getQuestionsAndAnswers(), ruleGcd);
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
