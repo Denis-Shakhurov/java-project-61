@@ -12,7 +12,8 @@ public class Even {
     private static final int MAX_INT = 200;
 
     public static void gameEven() {
-        Engine.engineGame(getQuestionsAndAnswers(), "Even");
+        String ruleEven = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine.engineGame(getQuestionsAndAnswers(), ruleEven);
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
