@@ -11,6 +11,11 @@ public class Prime {
     private static final int NUMBER_OF_ROUNDS = 3;
     private static final int MAX_INT = 100;
 
+    public static void gamePrime() {
+        String rulePrime = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        Engine.engineGame(getQuestionsAndAnswers(), rulePrime);
+    }
+
     public static boolean checkNumber(int number) {
         boolean check = true;
         for (int i = 2; i < number; i++) {
@@ -20,10 +25,6 @@ public class Prime {
             }
         }
         return check;
-    }
-
-    public static void gamePrime() {
-        Engine.engineGame(getQuestionsAndAnswers(), "Prime");
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
