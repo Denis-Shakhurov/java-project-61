@@ -14,12 +14,11 @@ public class Progression {
     private static final int MAX_INDEX = 5;
 
     public static void gameProgression() {
-        Engine.engineGame(getQuestionsAndAnswers(), "Progression");
+        String ruleProgression = "What number is missing in the progression?";
+        Engine.engineGame(getQuestionsAndAnswers(), ruleProgression);
     }
 
-    public static String[] progression() {
-        int start = Utils.getRandomInt(0, MAX_INT);
-        int index = Utils.getRandomInt(1, MAX_INDEX);
+    public static String[] progression(int start, int index) {
         String[] array = new String[LENGTH];
         array[0] = String.valueOf(start);
         for (int i = 1; i < array.length; i++) {
@@ -37,10 +36,12 @@ public class Progression {
     public static List<Map<String, String>> getQuestionsAndAnswers() {
         List<Map<String, String>> list = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            String[] array = progression();
-            int index = Utils.getRandomInt(0, LENGTH - 1);
-            String result = array[index];
-            String question = arrayWithEllipsis(index, array);
+            int start = Utils.getRandomInt(0, MAX_INT);
+            int index = Utils.getRandomInt(1, MAX_INDEX);
+            String[] array = progression(start, index);
+            int indexEllipsis = Utils.getRandomInt(0, LENGTH - 1);
+            String result = array[indexEllipsis];
+            String question = arrayWithEllipsis(indexEllipsis, array);
             String answer = result;
             list.add(Map.of(question, answer));
         }
