@@ -17,7 +17,7 @@ public class Calc {
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, String>> questionsAndAnswers = new ArrayList<>();
         String[] maths = {"+", "-", "*"};
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number1 = Utils.getRandomInt(0, MAX_INT);
@@ -25,19 +25,19 @@ public class Calc {
             int index = Utils.getRandomInt(0, 2);
             String math = maths[index];
             String question = number1 + " " + math + " " + number2;
-            String answer = mathOperation(number1, number2, math);
-            list.add(Map.of(question, answer));
+            String answer = String.valueOf(mathOperation(number1, number2, math));
+            questionsAndAnswers.add(Map.of(question, answer));
         }
-        return list;
+        return questionsAndAnswers;
     }
-    public static String mathOperation(int number1, int number2, String math) {
-        String result = "";
-        if (math.equals("+")) {
-            result = String.valueOf(number1 + number2);
-        } else if (math.equals("-")) {
-            result = String.valueOf(number1 - number2);
-        } else {
-            result = String.valueOf(number1 * number2);
+    public static int mathOperation(int number1, int number2, String math) {
+        int result = 0;
+        switch (math) {
+            case "-" : result = number1 - number2; break;
+            case "+" : result = number1 + number2; break;
+            case "*" : result = number1 * number2; break;
+            default :
+                System.out.println("unknown mathematical operation"); break;
         }
         return result;
     }
