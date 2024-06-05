@@ -17,16 +17,16 @@ public class Even {
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, String>> questionsAndAnswers = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number = Utils.getRandomInt(1, MAX_INT);
             if (isEven(number)) {
-                list.add(Map.of(String.valueOf(number), "yes"));
+                questionsAndAnswers.add(Map.of(String.valueOf(number), "yes"));
             } else {
-                list.add(Map.of(String.valueOf(number), "no"));
+                questionsAndAnswers.add(Map.of(String.valueOf(number), "no"));
             }
         }
-        return list;
+        return questionsAndAnswers;
     }
 
     public static boolean isEven(int number) {
