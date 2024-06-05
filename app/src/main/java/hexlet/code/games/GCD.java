@@ -21,15 +21,15 @@ public class GCD {
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, String>> questionsAndAnswers = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number1 = Utils.getRandomInt(0, MAX_INT);
             int number2 = Utils.getRandomInt(0, MAX_INT);
             int result = gcd(number1, number2);
             String question = number1 + " " + number2;
             String answer = String.valueOf(result);
-            list.add(Map.of(question, answer));
+            questionsAndAnswers.add(Map.of(question, answer));
         }
-        return list;
+        return questionsAndAnswers;
     }
 }
