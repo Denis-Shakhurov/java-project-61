@@ -38,11 +38,10 @@ public class Progression {
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int start = Utils.getRandomInt(0, MAX_INT);
             int index = Utils.getRandomInt(1, MAX_INDEX);
-            String[] array = getProgression(start, index);
+            String[] progression = getProgression(start, index);
             int indexEllipsis = Utils.getRandomInt(0, LENGTH - 1);
-            String result = array[indexEllipsis];
-            String question = getProgressionWithEllipsis(indexEllipsis, array);
-            String answer = result;
+            String answer = progression[indexEllipsis];
+            String question = getProgressionWithEllipsis(indexEllipsis, progression);
             questionsAndAnswers.add(Map.of(question, answer));
         }
         return questionsAndAnswers;
