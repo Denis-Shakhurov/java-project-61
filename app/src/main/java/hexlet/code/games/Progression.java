@@ -18,33 +18,33 @@ public class Progression {
         Engine.engineGame(getQuestionsAndAnswers(), ruleProgression);
     }
 
-    public static String[] progression(int start, int index) {
-        String[] array = new String[LENGTH];
-        array[0] = String.valueOf(start);
-        for (int i = 1; i < array.length; i++) {
-            array[i] = String.valueOf(Integer.parseInt(array[i - 1]) + index);
+    public static String[] getProgression(int start, int index) {
+        String[] progression = new String[LENGTH];
+        progression[0] = String.valueOf(start);
+        for (int i = 1; i < progression.length; i++) {
+            progression[i] = String.valueOf(Integer.parseInt(progression[i - 1]) + index);
         }
-        return array;
+        return progression;
     }
 
-    public static String arrayWithEllipsis(int index, String[] array) {
-        array[index] = "..";
-        String res = String.join(" ", array);
-        return res;
+    public static String getProgressionWithEllipsis(int indexEllipsis, String[] progression) {
+        progression[indexEllipsis] = "..";
+        String progressionWithEllipsis = String.join(" ", progression);
+        return progressionWithEllipsis;
     }
 
     public static List<Map<String, String>> getQuestionsAndAnswers() {
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, String>> questionsAndAnswers = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int start = Utils.getRandomInt(0, MAX_INT);
             int index = Utils.getRandomInt(1, MAX_INDEX);
-            String[] array = progression(start, index);
+            String[] array = getProgression(start, index);
             int indexEllipsis = Utils.getRandomInt(0, LENGTH - 1);
             String result = array[indexEllipsis];
-            String question = arrayWithEllipsis(indexEllipsis, array);
+            String question = getProgressionWithEllipsis(indexEllipsis, array);
             String answer = result;
-            list.add(Map.of(question, answer));
+            questionsAndAnswers.add(Map.of(question, answer));
         }
-        return list;
+        return questionsAndAnswers;
     }
 }
